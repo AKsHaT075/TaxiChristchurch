@@ -2,11 +2,25 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, MouseEvent } from "react"
 import { Mail, Phone, Wifi, MapPin, Menu } from "lucide-react"
+import { usePathname, useRouter } from "next/navigation"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+
+  // Handles anchor navigation: if not on home, go to /#section; else scroll
+  const handleAnchorClick = (e: MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname !== "/") {
+      e.preventDefault()
+      router.push(`/${hash}`)
+      setOpen(false)
+    }
+    // else, let default anchor behavior work (scrolls to section)
+  }
+
   return (
     <>
       {/* Top Header Bar */}
@@ -40,19 +54,19 @@ export default function Header() {
   <div className="mx-auto max-w-6xl px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group" aria-label="Taxis Christchurch Home">
           <img 
-            src="/Logo.jpeg" 
+            src="/Logo-Trans.png" 
             alt="Taxis Christchurch Logo" 
-            className="h-20 w-20 rounded-full object-cover shadow-lg group-hover:scale-105 transition-transform"
+            className="h-22 w-22 object-cover shadow-lg group-hover:scale-105 transition-transform"
           />
           {/* <span className="font-bold text-primary text-lg tracking-wide drop-shadow">Taxis <span className="text-white">Christchurch</span></span> */}
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-base font-medium">
-          <a href="#home" className="text-white hover:text-primary transition-colors">Home</a>
-          <a href="#about" className="text-white hover:text-primary transition-colors">About Us</a>
-          <a href="#services" className="text-primary hover:text-white transition-colors">Services</a>
-          <a href="#testimonials" className="text-white hover:text-primary transition-colors">Testimonials</a>
-          <a href="#contact" className="text-white hover:text-primary transition-colors">Contact Us</a>
+          <a href="#home" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#home')}>Home</a>
+          <a href="#about" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#about')}>About Us</a>
+          <a href="#services" className="text-primary hover:text-white transition-colors" onClick={e => handleAnchorClick(e, '#services')}>Services</a>
+          <a href="#testimonials" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#testimonials')}>Testimonials</a>
+          <a href="#contact" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#contact')}>Contact Us</a>
         </nav>
 
         <div className="hidden md:block">
@@ -94,15 +108,15 @@ export default function Header() {
         <nav className={`mx-auto max-w-6xl px-4 py-4 grid gap-4 transition-all duration-300 ease-in-out ${
           open ? 'transform translate-y-0' : 'transform -translate-y-4'
         }`}>
-            <a href="#home" className="text-white hover:text-primary transition-colors" onClick={() => setOpen(false)}>Home</a>
-            <a href="#about" className="text-white hover:text-primary transition-colors" onClick={() => setOpen(false)}>About Us</a>
-            <a href="#services" className="text-primary hover:text-white transition-colors" onClick={() => setOpen(false)}>Services</a>
-            <a href="#testimonials" className="text-white hover:text-primary transition-colors" onClick={() => setOpen(false)}>Testimonials</a>
-            <a href="#contact" className="text-white hover:text-primary transition-colors" onClick={() => setOpen(false)}>Contact Us</a>
+            <a href="#home" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#home')}>Home</a>
+            <a href="#about" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#about')}>About Us</a>
+            <a href="#services" className="text-primary hover:text-white transition-colors" onClick={e => handleAnchorClick(e, '#services')}>Services</a>
+            <a href="#testimonials" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#testimonials')}>Testimonials</a>
+            <a href="#contact" className="text-white hover:text-primary transition-colors" onClick={e => handleAnchorClick(e, '#contact')}>Contact Us</a>
             <Button className="bg-black text-primary border-2 border-primary hover:bg-primary hover:text-black w-full font-bold rounded-full mt-2">Book Now</Button>
           </nav>
         </div>
-    </header>
+      </header>
     </>
   )
 }

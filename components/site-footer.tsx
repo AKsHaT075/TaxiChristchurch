@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="space-y-3">
           <div className="flex items-center gap-2">
            
-            <span className="font-bold text-white">Taxis Christchurch</span>
+            <span className="font-bold text-white">Taxi Christchurch</span>
           </div>
           <p className="text-sm text-slate-400 leading-relaxed">
             Christchurch’s reliable choice for city rides, airport transfers, and executive travel.
@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-slate-800">
         <div className="mx-auto max-w-6xl px-4 py-4 text-xs text-slate-400 flex items-center justify-between">
-          <p>© {new Date().getFullYear()} Taxis Christchurch. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Taxi Christchurch. All rights reserved.</p>
           <p>Made with care in Christchurch.</p>
         </div>
       </div>
