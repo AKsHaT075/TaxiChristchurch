@@ -47,7 +47,8 @@ export default function GroupBookingForm() {
   return (
     <form className="space-y-5" onSubmit={onSubmit}>
       <Input name="name" placeholder="Your Name" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />
-      <Input name="email" placeholder="Your Email" type="email" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />
+      <Input name="phone" placeholder="Your Phone" type="tel" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />
+      <Input name="email" placeholder="Your Email (Optional)" type="email" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
       <Input name="pickup" placeholder="Pickup Address" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />
       <Input name="dropoff" placeholder="Destination Address" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />
       <Input name="datetime" placeholder="Pickup Date and Time" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" required />

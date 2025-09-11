@@ -47,7 +47,8 @@ export default function WeddingBookingForm() {
   return (
     <form className="space-y-5" onSubmit={onSubmit}>
       <Input name="name" placeholder="Bride/Groom Name" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />
-      <Input name="email" placeholder="Contact Email" type="email" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />
+      <Input name="phone" placeholder="Contact Phone" type="tel" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />
+      <Input name="email" placeholder="Contact Email (Optional)" type="email" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
       <Input name="venue" placeholder="Wedding Venue Address" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />
       <Input name="date" placeholder="Ceremony Date" type="date" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />
       <Input name="time" placeholder="Pickup Time" type="time" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" required />

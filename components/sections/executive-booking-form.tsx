@@ -47,7 +47,8 @@ export default function ExecutiveBookingForm() {
   return (
     <form className="space-y-5" onSubmit={onSubmit}>
       <Input name="name" placeholder="Your Name" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />
-      <Input name="email" placeholder="Company Email" type="email" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />
+      <Input name="phone" placeholder="Your Phone" type="tel" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />
+      <Input name="email" placeholder="Company Email (Optional)" type="email" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
       <Input name="pickup" placeholder="Pickup Address" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />
       <Input name="dropoff" placeholder="Destination Address" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />
       <Input name="datetime" placeholder="Date & Time Required" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" required />

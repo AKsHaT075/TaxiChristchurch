@@ -108,7 +108,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-semibold text-black">Email Address</Label>
+                    <Label htmlFor="email" className="text-sm font-semibold text-black">Email Address (Optional)</Label>
                     <Input 
                       id="email" 
                       name="email" 

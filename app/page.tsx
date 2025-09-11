@@ -134,7 +134,7 @@ export default function HomePage() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Email Address"
+                      placeholder="Email Address (Optional)"
                       className="h-12 border-slate-300 focus:border-orange-500 focus:ring-orange-500" />
                     <Select name="service" defaultValue="">
                       <SelectTrigger className="h-12 w-auto border-slate-300 focus:border-orange-500 focus:ring-orange-500">
