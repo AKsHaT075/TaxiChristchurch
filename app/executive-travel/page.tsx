@@ -41,9 +41,11 @@ export default function ExecutiveTravelPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
-      {/* Hero Section */}
-       <section className="relative bg-gradient-to-r from-black via-gray-900 to-black text-white py-20">
+    <>
+      <Header />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-black via-gray-900 to-black text-white py-20">
         <div className="absolute inset-0 bg-[url('/christchurch-city-night-taxi.jpg')] bg-cover bg-center opacity-30"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl">
@@ -228,6 +230,8 @@ export default function ExecutiveTravelPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   )
 }

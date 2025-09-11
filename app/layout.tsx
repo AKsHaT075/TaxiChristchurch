@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import FloatingActionButtons from "@/components/floating-action-buttons"
 
 
 const inter = Inter({
@@ -25,7 +26,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="font-sans bg-background text-foreground">{children}</body>
+      <body className="font-sans bg-background text-foreground">
+        {children}
+        <FloatingActionButtons />
+      </body>
     </html>
   )
 }

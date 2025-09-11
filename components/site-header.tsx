@@ -15,7 +15,11 @@ export default function Header() {
   const handleAnchorClick = (e: MouseEvent<HTMLAnchorElement>, hash: string) => {
     if (pathname !== "/") {
       e.preventDefault()
-      router.push(`/${hash}`)
+      if (hash === "#home") {
+        router.push("/") // Go to homepage directly for home button
+      } else {
+        router.push(`/${hash}`) // Go to homepage with hash for other sections
+      }
       setOpen(false)
     }
     // else, let default anchor behavior work (scrolls to section)
