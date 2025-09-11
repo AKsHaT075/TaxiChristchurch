@@ -126,13 +126,13 @@ export default function Services() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Link
                 href="tel:+64123456789"
-                className="bg-yellow-400 hover:bg-yellow-500 text-black hover:text-white font-bold px-6 sm:px-10 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg text-center"
+                className="bg-yellow-400 hover:bg-white text-black hover:text-white font-bold px-6 sm:px-10 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg text-center"
               >
-                📞 Call Now: +64 123 456 789
+                📞 Call Now: +64 225 286 415
               </Link>
               <Link
                 href="#contact"
-                className="bg-transparent border-2 border-yellow-400 hover:bg-yellow-400 text-yellow-400 hover:text-black font-bold px-6 sm:px-10 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg text-center"
+                className="bg-transparent border-2 border-white hover:bg-yellow-400 text-yellow-400 hover:text-black font-bold px-6 sm:px-10 py-3 sm:py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg text-center"
               >
                 💬 Get Quote Online
               </Link>

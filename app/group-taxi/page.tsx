@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Users, MapPin, Clock, Shield, CheckCircle, Star, Luggage } from "lucide-react"
 import Header from "@/components/site-header"
 import Footer from "@/components/site-footer"
+import GroupBookingForm from "@/components/sections/group-booking-form"
 
 export default function GroupTaxiPage() {
   const recentServices = [
@@ -82,54 +83,7 @@ export default function GroupTaxiPage() {
             <Card className="shadow-xl border-0 bg-white/70 backdrop-blur-sm">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-8 text-slate-800">Book Your Group Taxi</h3>
-                <form className="space-y-5">
-                  <Input placeholder="Your Name" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <Input placeholder="Your Email" type="email" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <Input placeholder="Pickup Address" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <Input placeholder="Destination Address" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <Input placeholder="Pickup Date and Time" className="h-12 border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Passengers</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                  </select>
-                 <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Baby Seats</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                     <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-
-                  </select>
-                  <Textarea placeholder="Special Requirements..." rows={4} className="border-slate-200 focus:border-green-500 focus:ring-green-500" />
-                  <Button className="w-full h-12 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                    Book Group Taxi
-                  </Button>
-                </form>
+                <GroupBookingForm />
               </CardContent>
             </Card>
           </div>

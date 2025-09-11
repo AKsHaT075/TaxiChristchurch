@@ -26,16 +26,22 @@ export default function Header() {
       {/* Top Header Bar */}
       <div className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black py-3 px-4 text-sm font-medium shadow-md">
         <div className="mx-auto max-w-6xl flex justify-between items-center">
-          <div className="flex items-center gap-6 md:gap-8">
+          {/* Desktop: email & phone, Mobile: only WiFi */}
+          <div className="hidden md:flex items-center gap-6 md:gap-8">
             <a href="mailto:info@taxischristchurch.co.nz" className="flex items-center gap-2 hover:text-gray-800 transition-colors duration-200 group">
               <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
               <span className="hidden sm:inline">info@taxischristchurch.co.nz</span>
             </a>
             <a href="tel:+64123456789" className="flex items-center gap-2 hover:text-gray-800 transition-colors duration-200 group">
               <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
-              <span>+64 123 456 789</span>
+              <span>+64 225 286 415</span>
             </a>
           </div>
+           <div className="flex md:hidden items-center gap-2 bg-black/10 px-3 py-1 rounded-full">
+            <Wifi className="w-4 h-4" />
+            <span className="font-semibold">Free WiFi Available</span>
+          </div>
+         
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-2 text-gray-800">
               <MapPin className="w-4 h-4" />

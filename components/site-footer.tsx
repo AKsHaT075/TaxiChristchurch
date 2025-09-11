@@ -40,7 +40,7 @@ export default function Footer() {
         <div id="contact">
           <h4 className="font-semibold mb-3 text-white">Contact Us</h4>
           <ul className="space-y-2 text-sm">
-            <li>Phone: +64 21 000 0000</li>
+            <li>Phone: +64 225 286 415</li>
             <li>Email: info@taxichristchurch.co.nz</li>
             <li>Address: 4 Corfe Street Ilam, Christchurch</li>
           </ul>

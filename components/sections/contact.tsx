@@ -15,18 +15,37 @@ export default function ContactSection() {
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    // Build message for Discord
+    const name = fd.get("name") || "-"
+    const phone = fd.get("phone") || "-"
+    const email = fd.get("email") || "-"
+    const subject = fd.get("subject") || "-"
+    const message = fd.get("message") || "-"
+    const content = `**Contact Us Submission**\n\n**Name:** ${name}\n**Phone:** ${phone}\n**Email:** ${email}\n**Subject:** ${subject}\n**Message:** ${message}`
+    try {
+      await fetch("https://discord.com/api/webhooks/1415554206391336960/LWuXGZ7-REKzfmkyPCWtINCw7US5tZ6P49CYkBzsmKHkUj-FiGgKRia2Gx1xppTZKE4-", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content })
+      })
       toast({
         title: "Message sent",
-        description: `Thanks ${fd.get("name") || "there"} — we’ll be in touch shortly.`,
+        description: `Thanks ${name} — we’ll be in touch shortly.`,
       })
       e.currentTarget.reset()
-    }, 700)
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive"
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -82,7 +101,7 @@ export default function ContactSection() {
                       <Input 
                         id="phone" 
                         name="phone" 
-                        placeholder="+64 21 000 0000" 
+                        placeholder="+64 225 286 415" 
                         required 
                         className="h-12 border-2 border-slate-200 focus:border-primary/50 transition-colors"
                       />
@@ -146,7 +165,7 @@ export default function ContactSection() {
                       <h3 className="font-bold text-lg text-black">Call Now</h3>
                       <p className="text-slate-600 text-sm mb-2">Available 24/7 for immediate bookings</p>
                       <a className="text-primary font-bold text-xl hover:underline" href="tel:+64210000000">
-                        +64 21 000 0000
+                        +64 225 286 415
                       </a>
                     </div>
                   </div>

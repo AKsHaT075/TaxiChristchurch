@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Plane, Clock, Users, Shield, CheckCircle, Star } from "lucide-react"
+
 import Header from "@/components/site-header"
 import Footer from "@/components/site-footer"
+import AirportBookingForm from "@/components/sections/airport-booking-form"
 
 export default function AirportTransportPage() {
   const recentServices = [
@@ -83,31 +85,7 @@ export default function AirportTransportPage() {
             <Card className="shadow-lg">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-6 text-slate-800">Book Your Taxi</h3>
-                <form className="space-y-4">
-                  <Input placeholder="Your Name" className="h-12" />
-                  <Input placeholder="Your Email" type="email" className="h-12" />
-                  <Input placeholder="Pickup Address" className="h-12" />
-                  <Input placeholder="Destination Address" className="h-12" />
-                  <Input placeholder="Pickup Date and Time" className="h-12" />
-                  <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Passengers</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Baby Seats</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  
-                  </select>
-                  <Textarea placeholder="Special Message..." rows={4} />
-                  <Button className="w-full h-12 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
-                    Book Now
-                  </Button>
-                </form>
+                <AirportBookingForm />
               </CardContent>
             </Card>
           </div>

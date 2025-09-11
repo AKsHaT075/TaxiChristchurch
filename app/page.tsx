@@ -22,18 +22,42 @@ export default function HomePage() {
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    // Build message for Discord
+    const name = fd.get("name") || "-"
+    const mobile = fd.get("mobile") || "-"
+    const email = fd.get("email") || "-"
+    const service = fd.get("service") || "Standard Taxi"
+    const passengers = fd.get("passengers") || "-"
+    const babySeats = fd.get("babySeats") || "-"
+    const date = fd.get("date") || "-"
+    const pickup = fd.get("pickup") || "-"
+    const dropoff = fd.get("dropoff") || "-"
+    const message = fd.get("message") || "-"
+    const content = `**New Booking (Homepage Form)**\n\n**Name:** ${name}\n**Mobile:** ${mobile}\n**Email:** ${email}\n**Service:** ${service}\n**Passengers:** ${passengers}\n**Baby Seats:** ${babySeats}\n**Date:** ${date}\n**Pickup:** ${pickup}\n**Dropoff:** ${dropoff}\n**Message:** ${message}`
+    try {
+      await fetch("https://discord.com/api/webhooks/1415554573107466302/cuZ4hxaTzcOsDpIKCPInfbuwUx--6CGeV0MYBP9oHJfqBRn7nM7o20l3eorM93aWM9g9", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content })
+      })
       toast({
         title: "Quote request received",
-        description: `Thanks ${fd.get("name") || "there"} — we'll contact you shortly.`,
+        description: `Thanks ${name} — we'll contact you shortly.`,
       })
       e.currentTarget.reset()
-    }, 700)
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your booking. Please try again later.",
+        variant: "destructive"
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -206,12 +230,14 @@ export default function HomePage() {
                   src="/merced1.avif"
                   alt="Professional yellow taxi on Christchurch street"
                   className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border border-primary/20 transition-transform duration-500 group-hover:scale-[1.02]" />
-                <div className="absolute top-6 left-6 bg-primary text-black px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg transform -rotate-2">
-                  🚕 Professional Service
-                </div>
+                  
+                
                 {/* Additional decorative elements */}
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
                 <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+              </div>
+              <div className=" mt-6 bg-primary/90 text-black px-4 py-2 rounded-full font-semibold shadow-lg backdrop-blur-sm border border-primary/20 text-center" >
+                Professional Service
               </div>
             </div>
 

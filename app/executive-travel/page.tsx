@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Star, Briefcase, Clock, Shield, CheckCircle, Crown, Car, Wifi } from "lucide-react"
 import Header from "@/components/site-header"
 import Footer from "@/components/site-footer"
+import ExecutiveBookingForm from "@/components/sections/executive-booking-form"
 
 export default function ExecutiveTravelPage() {
   const recentServices = [
@@ -80,31 +81,7 @@ export default function ExecutiveTravelPage() {
             <Card className="shadow-xl border-0 bg-white/70 backdrop-blur-sm">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-8 text-slate-800">Book Executive Transport</h3>
-                <form className="space-y-5">
-                  <Input placeholder="Your Name" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <Input placeholder="Company Email" type="email" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <Input placeholder="Pickup Address" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <Input placeholder="Destination Address" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <Input placeholder="Date & Time Required" className="h-12 border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Passengers</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                 <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="" disabled selected>Number of Baby Seats</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  
-                  </select>
-                  <Textarea placeholder="Special Corporate Requirements..." rows={4} className="border-slate-200 focus:border-purple-500 focus:ring-purple-500" />
-                  <Button className="w-full h-12 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                    Book Executive Transport
-                  </Button>
-                </form>
+                <ExecutiveBookingForm />
               </CardContent>
             </Card>
           </div>

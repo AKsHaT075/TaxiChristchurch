@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Heart, Camera, Clock, Shield, CheckCircle, Star, Gift, Sparkles } from "lucide-react"
 import Header from "@/components/site-header"
 import Footer from "@/components/site-footer"
+import WeddingBookingForm from "@/components/sections/wedding-booking-form"
 
 export default function WeddingTaxisPage() {
   const recentServices = [
@@ -82,24 +83,7 @@ export default function WeddingTaxisPage() {
             <Card className="shadow-xl border-0 bg-white/70 backdrop-blur-sm">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-8 text-slate-800">Book Wedding Transport</h3>
-                <form className="space-y-5">
-                  <Input placeholder="Bride/Groom Name" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Input placeholder="Contact Email" type="email" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Input placeholder="Wedding Venue Address" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Input placeholder="Ceremony Date" type="date" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Input placeholder="Pickup Time" type="time" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Input placeholder="Number of Passengers" className="h-12 border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <select className="h-12 w-full rounded-md border border-gray-300 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    <option value="0" selected>Number of Baby Seats: 0</option>
-                    <option value="1">Number of Baby Seats: 1</option>
-                    <option value="2">Number of Baby Seats: 2</option>
-                    <option value="3">Number of Baby Seats: 3</option>
-                  </select>
-                  <Textarea placeholder="Special Wedding Requirements..." rows={4} className="border-slate-200 focus:border-rose-500 focus:ring-rose-500" />
-                  <Button className="w-full h-12 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-700 hover:to-rose-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                    Book Wedding Transport
-                  </Button>
-                </form>
+                <WeddingBookingForm />
               </CardContent>
             </Card>
           </div>
