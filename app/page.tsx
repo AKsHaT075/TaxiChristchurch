@@ -90,7 +90,7 @@ export default function HomePage() {
                 Making city travel easy and reliable for you. Available 24/7 across Christchurch and beyond.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+64210000000" className="inline-flex" aria-label="Call Taxis Christchurch">
+                <a href="tel:+64225286415" className="inline-flex" aria-label="Call Taxis Christchurch">
                   <Button size="lg" className="bg-orange-600 text-white hover:bg-orange-700 font-semibold px-8">
                     📞 Call Now
                   </Button>
